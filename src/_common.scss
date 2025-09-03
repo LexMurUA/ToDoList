@@ -1,0 +1,28 @@
+
+@mixin breakPoint($point) {
+  @if $point ==phone {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $point ==tablet {
+    @media (max-width: 834px) {
+      @content;
+    }
+  } @else if $point ==laptop {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point ==desktop {
+    @media (max-width: 1440px) {
+      @content;
+    }
+  }
+}
+
+@mixin mobileClick() {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

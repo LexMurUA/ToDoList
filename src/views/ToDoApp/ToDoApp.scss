@@ -1,0 +1,91 @@
+@use '../../common' as *;
+
+.to-do-app {
+  border: 2px solid rgba(133, 91, 14, 0.693);
+  width: 100%;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  gap: 15px;
+  background-color: rgba(145, 145, 145, 0.5);
+
+  h2 {
+    color: rgba(255, 253, 209, 0.914);
+  }
+
+  h1 {
+    color: rgba(255, 253, 209, 0.914);
+  }
+
+  >button {
+    color: rgba(255, 253, 209, 0.914);
+    background-color: rgba(133, 91, 14, 0.693);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    min-width: 30%;
+    height: 5vh;
+    padding: 15px;
+
+    >p {
+      text-align: center;
+    }
+  }
+
+  >input {
+    background-color: rgba(142, 138, 138, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    color: rgba(255, 253, 209, 0.914);
+    border: none;
+    border-radius: 25px;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    min-width: 80%;
+    height: 5vh;
+    padding: 5px 15px;
+
+  }
+
+  >input:focus {
+    background-color: rgba(133, 91, 14, 0.693);
+    color: rgba(255, 253, 209, 0.914);
+
+  }
+
+  >input::placeholder {
+
+    color: rgba(255, 253, 209, 0.914);
+  }
+
+  button {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 15px;
+  }
+
+  .list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    color: rgba(255, 253, 209, 0.914);
+    ;
+  }
+
+}
+
+
+@include breakPoint (phone) {
+  .to-do-app {
+    padding: 25px;
+    h2{
+      text-align: center;
+    }
+  }
+}

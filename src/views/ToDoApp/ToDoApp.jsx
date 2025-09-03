@@ -1,7 +1,7 @@
 import { Task } from "../../components/Task/Task.";
 import { useTo_Do_ListContext } from "../../context/To_Do_ListContext";
-import "./ToDoApp.css";
-import React from "react";
+import "./ToDoApp.scss";
+
 
 export const ToDoApp = () => {
   const { tasks, addTask, buttonShowF, buttonShow, taskValueRef, onEnterDown } =

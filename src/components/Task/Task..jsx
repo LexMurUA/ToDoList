@@ -1,4 +1,4 @@
-import "./Task.css";
+import "./Task.scss";
 import pen from "../../images/pen.svg";
 import trash from "../../images/trash.svg";
 import { useState, useRef } from "react";

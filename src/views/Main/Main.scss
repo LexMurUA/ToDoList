@@ -1,0 +1,19 @@
+@use '../../common' as *;
+main{
+  display: flex;
+  justify-content: center;
+  border: 1px solid green;
+  padding: 50px;
+    background-image: url('../../images/board.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 375px;
+}
+
+
+@include breakPoint(tablet){
+  main{
+  padding: 10px;
+  }
+}

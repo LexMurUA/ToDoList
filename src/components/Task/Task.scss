@@ -1,0 +1,140 @@
+@use '../../common' as *;
+
+.task-view {
+  max-width: 100%;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-radius: 25px;
+  padding: 5px 15px;
+  gap: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  .lab {
+  display: none;
+}
+input {
+  margin: 5px 0;
+  width: 43vw;
+  background-color: rgba(142, 138, 138, 0.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  color: rgba(255, 253, 209, 0.914);
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-radius: 25px;
+  height: 5vh;
+  padding: 5px 15px;
+}
+
+ input:focus {
+  background-color: rgba(133, 91, 14, 0.693);
+  color: rgba(255, 253, 209, 0.914);
+}
+
+ input::placeholder {
+
+  color: rgba(255, 253, 209, 0.914);
+}
+
+button {
+  cursor: pointer;
+  background-color: rgba(255, 253, 209, 0.914);
+  color: rgba(133, 91, 14, 0.693);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-radius: 25px;
+  height: 5vh;
+  padding: 5px 10px;
+}
+
+label {
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border: 2px solid black;
+  transition: 1s;
+}
+
+ input:checked+label {
+  background-image: url("/images/done.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+ label:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+p {
+  text-align: left;
+  width: 50vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+span {
+  display: block;
+
+  font-size: 10px;
+  text-align: center;
+}
+img {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  transition: 1s;
+}
+
+img:hover {
+  scale: 1.1;
+}
+
+
+}
+.task-done {
+  background-color: rgba(31, 114, 23, 0.853);
+}
+
+.task-done p {
+  text-decoration: line-through;
+}
+
+.task-undone {
+  background-color: rgba(133, 91, 14, 0.693);
+}
+
+
+@include breakPoint (phone) {
+  .task-view {
+    padding: 5px;
+    display: grid;
+    justify-items: center;
+    grid-template: repeat(2, 1fr)/repeat(3, 1fr);
+    label{
+      grid-column: 1;
+      grid-row: 1;
+    }
+    span{
+      grid-column: 2;
+      grid-row: 1;
+    }
+    p{
+      grid-column: 3;
+      grid-row: 1/3;
+      align-self: flex-start;
+    }
+    img:nth-child(5){
+      grid-column: 2;
+
+    }
+    img:nth-child(6){
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }
+}
+
