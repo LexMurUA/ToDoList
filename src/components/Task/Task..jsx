@@ -5,7 +5,7 @@ import { useState, useRef } from "react";
 import { useTo_Do_ListContext } from "../../context/To_Do_ListContext";
 
 export const Task = ({ id, taskText, status, date, time }) => {
-  const { tasks, deleteTask, changeCheckBox, setTasks } =
+  const { tasks, deleteTask, changeCheckBox, setTasks,setIsShowModal,deleteWithModal } =
     useTo_Do_ListContext();
 
   const [change, setChange] = useState(false);
@@ -67,7 +67,7 @@ export const Task = ({ id, taskText, status, date, time }) => {
         </>
       )}
       <img onClick={beginTochangeTask} src={pen} alt="pen" />
-      <img src={trash} onClick={() => deleteTask(id)} alt="trash" />
+      <img src={trash} onClick={() => deleteWithModal(id)} alt="trash" />
     </div>
   );
 };

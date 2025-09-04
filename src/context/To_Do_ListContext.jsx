@@ -6,7 +6,8 @@ const To_Do_ListContext = createContext(null);
 
 export const To_Do_ListContextProvider = ({ children }) => {
   const [buttonShow, setButtonShow] = useState(false);
-
+  const [isShowModal,setIsShowModal]= useState(false)
+  const [currentIdDelete,setCurrentIdDelete] = useState(null)
   const [tasks, setTasks] = useState(() => {
     const toDoList = localStorage.getItem("tasks");
     return toDoList ? JSON.parse(toDoList) : [];
@@ -46,8 +47,10 @@ export const To_Do_ListContextProvider = ({ children }) => {
     e.key === "Enter" ? addTask() : e.key;
   };
 
+
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id != id));
+    setIsShowModal(false)
   };
 
   const changeCheckBox = (id) => {
@@ -57,6 +60,11 @@ export const To_Do_ListContextProvider = ({ children }) => {
       )
     );
   };
+
+  const deleteWithModal = (id) =>{
+    setCurrentIdDelete(id)
+    setIsShowModal(true)
+  }
   return (
     <To_Do_ListContext.Provider
       value={{
@@ -70,6 +78,10 @@ export const To_Do_ListContextProvider = ({ children }) => {
         onEnterDown,
         deleteTask,
         changeCheckBox,
+        setIsShowModal,
+        isShowModal,
+        deleteWithModal,
+        currentIdDelete
       }}
     >
       {children}

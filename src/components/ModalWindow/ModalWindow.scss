@@ -1,0 +1,78 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  &-content {
+    max-width: 450px;
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 16px;
+    background-color: rgba(145, 145, 145, 0.5);
+    border: 1px solid rgba(133, 91, 14, 0.693);
+    border-radius: 25px;
+
+    &-close {
+      color: rgba(255, 253, 209, 0.914);
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    &-close:hover {
+      color: rgb(100, 100, 100);
+      color: rgba(215, 11, 11, 0.811);
+      scale: 1.1;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    &-btns {
+
+      button {
+        width: 100%;
+        margin: 3px;
+        padding: 10px;
+        font-weight: 600;
+        border-radius: 6px;
+        border: 1px solid;
+        cursor: pointer;
+      }
+
+      .accept {
+        color: #fff;
+        background-color: rgba(255, 253, 209, 0.914);
+        color: rgba(133, 91, 14, 0.693);
+      }
+
+      .accept:hover {
+        background-color: rgba(215, 11, 11, 0.811);
+        color: rgba(255, 253, 209, 0.914);
+      }
+
+      .reject {
+        background-color: rgba(133, 91, 14, 0.693);
+        color: rgba(255, 253, 209, 0.914);
+      }
+
+      .reject:hover {
+        background-color: rgba(31, 114, 23, 0.853);
+        color: rgba(222, 192, 24, 0.851);
+      }
+    }
+  }
+
+  .none {
+    display: none;
+  }
+
+}

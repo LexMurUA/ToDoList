@@ -1,12 +1,15 @@
+import { useState } from "react";
+import { ModalWindow } from "../../components/ModalWindow/ModalWindow";
 import { Task } from "../../components/Task/Task.";
 import { useTo_Do_ListContext } from "../../context/To_Do_ListContext";
 import "./ToDoApp.scss";
 
 
 export const ToDoApp = () => {
-  const { tasks, addTask, buttonShowF, buttonShow, taskValueRef, onEnterDown } =
+  const { tasks, addTask, buttonShowF, buttonShow, taskValueRef, onEnterDown,isShowModal } =
     useTo_Do_ListContext();
-
+    
+    
   return (
     <div className="to-do-app">
       <h1>Створіть завдання</h1>
@@ -32,6 +35,7 @@ export const ToDoApp = () => {
           <Task key={task.id} {...task} />
         ))}
       </div>
+      {isShowModal && <ModalWindow />}
     </div>
   );
 };
